@@ -4,6 +4,11 @@ body {
   overflow-y: auto;
 }
 
+.width-expand {
+  min-width: 1px;
+  max-width: 100%;
+}
+
 .side-header {
   padding: 11px 10px;
   border-bottom-color: transparent;
@@ -60,10 +65,31 @@ body {
 }
 
 .theme-icon {
+  position: relative;
+  width: 6rem;
+
+  &__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+  }
 
   &_large {
-    width: 6rem;
-    height: 6rem;
+    width: 8rem;
+
+    .theme-icon__text {
+      font-size: 24px;
+    }
+  }
+
+  &_small {
+    width: 4rem;
+  }
+
+  &_xsmall {
+    width: 3rem;
   }
 }
 
@@ -107,6 +133,15 @@ body {
   }
 }
 
+.progress {
+  border: 1px solid $info-bg;
+
+  &__value {
+    width: 55px;
+    min-height: 30px;
+    font-size: 20px;
+  }
+}
 
 
 
@@ -144,6 +179,12 @@ body {
     &__card {
       padding: 30px 60px;
     }
+  }
+
+  .counter-status_left {
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 }
 

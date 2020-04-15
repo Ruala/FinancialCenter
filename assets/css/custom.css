@@ -48,7 +48,8 @@ body {
 
 .theme-icon {
   position: relative;
-  width: 6rem; }
+  width: 6rem;
+  height: auto; }
   .theme-icon__text {
     position: absolute;
     top: 50%;
@@ -96,6 +97,26 @@ body {
     width: 55px;
     min-height: 30px;
     font-size: 20px; }
+
+.panel {
+  padding: 0.375rem 0.75rem;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 1.84615385;
+  border-radius: 5px; }
+  .panel_default {
+    background-color: #22223d; }
+
+.theme-counter {
+  position: relative;
+  padding: 10px;
+  font-size: 80px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  background: linear-gradient(to top right, #282828 0%, #787878 100%);
+  border: 5px double #0774f8;
+  border-radius: 5px; }
 
 .dark-mode .side-header {
   border-bottom-color: transparent; }

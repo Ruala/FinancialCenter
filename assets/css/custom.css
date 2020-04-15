@@ -47,14 +47,10 @@ body {
   height: 6rem; }
 
 .team-structure {
+  display: flex;
   position: relative; }
   .team-structure .tab-content {
-    position: absolute;
-    top: 0;
-    left: calc(100% + 20px);
-    bottom: 0;
-    min-width: 300px;
-    max-width: 100%; }
+    margin-left: 20px; }
   .team-structure .tab-pane, .team-structure .card {
     height: 100%;
     border: none;
@@ -79,10 +75,23 @@ body {
 .dark-mode .side-header {
   border-bottom-color: transparent; }
 
+@media (min-width: 576px) {
+  .team-structure .tab-content {
+    min-width: 300px;
+    max-width: 100%; }
+  .team-structure__list {
+    min-width: 100px;
+    max-width: 100%; } }
 @media (min-width: 992px) {
   .start-message {
     padding-top: 160px; }
     .start-message__card {
       padding: 30px 60px; } }
+@media (min-width: 1200px) {
+  .team-structure .tab-content {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    bottom: 0; } }
 
 /*# sourceMappingURL=custom.css.map */

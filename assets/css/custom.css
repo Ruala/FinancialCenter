@@ -1,0 +1,53 @@
+body {
+  overflow-y: auto; }
+
+.side-header {
+  padding: 11px 10px;
+  border-bottom-color: transparent; }
+  .side-header .header-brand1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    color: #dedefd;
+    background-color: #22223d;
+    border-radius: 50%; }
+
+.side-menu {
+  padding-top: 20px; }
+  .side-menu > li + li {
+    margin-top: 20px; }
+  .side-menu__item {
+    padding: 0.375rem 0.75rem;
+    font-size: 16px;
+    text-align: center;
+    white-space: nowrap;
+    line-height: 1.84615385;
+    background-color: #22223d;
+    border-radius: 5px; }
+
+.app-content {
+  min-height: 100vh; }
+
+.page-header {
+  justify-content: center; }
+
+.page-title {
+  margin-bottom: 0; }
+
+.start-message {
+  padding-top: 1.5rem; }
+  .start-message__card {
+    border-radius: 20px; }
+
+.dark-mode .side-header {
+  border-bottom-color: transparent; }
+
+@media (min-width: 992px) {
+  .start-message {
+    padding-top: 160px; }
+    .start-message__card {
+      padding: 30px 60px; } }
+
+/*# sourceMappingURL=custom.css.map */

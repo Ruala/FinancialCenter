@@ -34,7 +34,8 @@ body {
   justify-content: center; }
 
 .page-title {
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  text-align: center; }
 
 .start-message {
   padding-top: 1.5rem; }

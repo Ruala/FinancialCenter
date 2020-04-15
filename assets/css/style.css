@@ -8890,14 +8890,6 @@ a.icon:hover {
 		padding: 17px 24px !important; 
 	}
 }
-@media (max-width: 576px){
-	.mb-sm-0, .my-sm-0 {
-		margin-bottom: 0 !important;
-	}
-	.sm-mb-3{
-		margin-bottom: 1.5rem !important;
-	}
-}
 @media (max-width: 568px) and (min-width:480px) {
 	.container-messages {
 		position: absolute;

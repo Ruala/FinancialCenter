@@ -41,6 +41,40 @@ body {
   .start-message__card {
     border-radius: 20px; }
 
+.theme-icon_large {
+  width: 6rem;
+  height: 6rem; }
+
+.team-structure {
+  position: relative; }
+  .team-structure .tab-content {
+    position: absolute;
+    top: 0;
+    left: calc(100% + 20px);
+    bottom: 0;
+    min-width: 300px;
+    max-width: 100%; }
+  .team-structure .tab-pane, .team-structure .card {
+    height: 100%;
+    border: none;
+    box-shadow: none; }
+  .team-structure__list .btn {
+    position: relative; }
+    .team-structure__list .btn::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: calc(100% + 7px);
+      transform: translateY(-50%);
+      border-width: 10px 15px 10px 0;
+      border-color: transparent;
+      border-style: solid;
+      border-right-color: #30304d;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out; }
+    .team-structure__list .btn.active::after {
+      opacity: 1; }
+
 .dark-mode .side-header {
   border-bottom-color: transparent; }
 

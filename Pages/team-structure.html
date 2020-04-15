@@ -33,6 +33,9 @@
     <!--C3 CHARTS CSS -->
     <link href="../assets/plugins/charts-c3/c3-chart.css" rel="stylesheet"/>
 
+    <!-- TABS STYLES -->
+    <link href="../assets/plugins/tabs/tabs.css" rel="stylesheet" />
+
     <!-- CUSTOM SCROLL BAR CSS-->
     <link href="../assets/plugins/scroll-bar/jquery.mCustomScrollbar.css" rel="stylesheet"/>
 
@@ -251,58 +254,83 @@
 
                 <!-- PAGE-HEADER -->
                 <div class="page-header">
-                    <h1 class="page-title">Investment</h1>
+                    <h1 class="page-title">Team structure</h1>
                 </div>
                 <!-- PAGE-HEADER END -->
 
-                <!-- ROW-1 OPEN -->
-                <div class="row">
-                    <div class="col-12 d-flex mb-5">
-                        <div class="counter-status text-center">
-                            <div class="counter-icon mx-auto">
-                                <img src="../assets/images/icons/icon-1.png" alt="img">
-                            </div>
-                            <h2 class="my-4"><span class="counter">1000</span> USD</h2>
-                            <h5 class="mb-0">USD balance</h5>
+                <div class="d-flex justify-content-center">
+                    <div>
+                        <div class="theme-icon_large mb-3">
+                            <img src="../assets/images/icons/icon-8.png" alt="img">
                         </div>
-                    </div><!-- COL END -->
+                        <div class="team-structure mb-5">
+                            <div class="list-group team-structure__list" id="list-tab" role="tablist">
+                                <a class="btn btn-info btn-block mb-3 active" data-toggle="list" href="#list-pane-1">1</a>
+                                <a class="btn btn-info btn-block mb-3" data-toggle="list" href="#list-pane-2">2</a>
+                                <a class="btn btn-info btn-block mb-3" data-toggle="list" href="#list-pane-3">3</a>
+                                <a class="btn btn-info btn-block mb-3" data-toggle="list" href="#list-pane-4">4</a>
+                                <a class="btn btn-info btn-block mb-3" data-toggle="list" href="#list-pane-5">5</a>
+                                <a class="btn btn-info btn-block mb-3" data-toggle="list" href="#list-pane-6">6</a>
+                                <a class="btn btn-info btn-block mb-3" data-toggle="list" href="#list-pane-7">7</a>
+                                <a class="btn btn-info btn-block mb-3" data-toggle="list" href="#list-pane-8">8</a>
+                                <a class="btn btn-info btn-block mb-3" data-toggle="list" href="#list-pane-9">9</a>
+                                <a class="btn btn-info btn-block" data-toggle="list" href="#list-pane-10">10</a>
+                            </div>
+                            <div class="tab-content text-center">
+                                <div class="tab-pane fade show active" id="list-pane-1">
+                                    <div class="card card-body">
+                                        <h4>Account address 1</h4>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="list-pane-2">
+                                    <div class="card card-body">
+                                        <h4>Account address 2</h4>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="list-pane-3">
+                                    <div class="card card-body">
+                                        <h4>Account address 3</h4>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="list-pane-4">
+                                    <div class="card card-body">
+                                        <h4>Account address 4</h4>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="list-pane-5">
+                                    <div class="card card-body">
+                                        <h4>Account address 5</h4>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="list-pane-6">
+                                    <div class="card card-body">
+                                        <h4>Account address 6</h4>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="list-pane-7">
+                                    <div class="card card-body">
+                                        <h4>Account address 7</h4>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="list-pane-8">
+                                    <div class="card card-body">
+                                        <h4>Account address 8</h4>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="list-pane-9">
+                                    <div class="card card-body">
+                                        <h4>Account address 9</h4>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="list-pane-10">
+                                    <div class="card card-body">
+                                        <h4>Account address 10</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- ROW-1 CLOSED -->
-
-                <!-- ROW-2 OPEN -->
-                <div class="row">
-                    <div class="col-12 col-lg-6 col-xl-4 mb-5">
-                        <div class="counter-status text-center">
-                            <div class="mb-5">
-                                <img src="../assets/images/image.jpg" alt="img">
-                            </div>
-                            <button type="button" class="btn btn-success btn-lg btn-block w-80 mx-auto mb-5">BUY</button>
-                            <h2 class="mb-0">300 USD-1000 USD</h2>
-                            <h5 class="mb-0">3 times investment income</h5>
-                        </div>
-                    </div><!-- COL END -->
-                    <div class="col-12 col-lg-6 col-xl-4 mb-5">
-                        <div class="counter-status text-center">
-                            <div class="mb-5">
-                                <img src="../assets/images/image.jpg" alt="img">
-                            </div>
-                            <button type="button" class="btn btn-success btn-lg btn-block w-80 mx-auto mb-5">BUY</button>
-                            <h2 class="mb-0">300 USD-1000 USD</h2>
-                            <h5 class="mb-0">3 times investment income</h5>
-                        </div>
-                    </div><!-- COL END -->
-                    <div class="col-12 col-lg-6 col-xl-4 mb-5">
-                        <div class="counter-status text-center">
-                            <div class="mb-5">
-                                <img src="../assets/images/image.jpg" alt="img">
-                            </div>
-                            <button type="button" class="btn btn-success btn-lg btn-block w-80 mx-auto mb-5">BUY</button>
-                            <h2 class="mb-0">300 USD-1000 USD</h2>
-                            <h5 class="mb-0">3 times investment income</h5>
-                        </div>
-                    </div><!-- COL END -->
-                </div>
-                <!-- ROW-2 CLOSED -->
 
             </div>
             <!-- CONTAINER CLOSED -->
@@ -336,6 +364,10 @@
 
 <!-- SIDE-MENU JS -->
 <script src="../assets/plugins/sidemenu/sidemenu.js"></script>
+
+<!--- TABS JS -->
+<script src="../assets/plugins/tabs/jquery.multipurpose_tabcontent.js"></script>
+<script src="../assets/plugins/tabs/tab-content.js"></script>
 
 <!-- CUSTOM SCROLL BAR JS-->
 <script src="../assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js"></script>

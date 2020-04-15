@@ -58,6 +58,58 @@ body {
   }
 }
 
+.theme-icon {
+
+  &_large {
+    width: 6rem;
+    height: 6rem;
+  }
+}
+
+.team-structure {
+  position: relative;
+
+  .tab-content {
+    position: absolute;
+    top: 0;
+    left: calc(100% + 20px);
+    bottom: 0;
+    min-width: 300px;
+    max-width: 100%;
+  }
+
+  .tab-pane, .card {
+    height: 100%;
+    border: none;
+    box-shadow: none;
+  }
+
+  &__list {
+
+    .btn {
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: calc(100% + 7px);
+        transform: translateY(-50%);
+        border-width: 10px 15px 10px 0;
+        border-color: transparent;
+        border-style: solid;
+        border-right-color: $global-secondary-color;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      &.active::after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
 
 
 

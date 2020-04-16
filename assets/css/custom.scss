@@ -1,5 +1,6 @@
 @import "variables";
 @import "roulette";
+@import "flip-clock";
 
 body {
   overflow-y: auto;
@@ -179,17 +180,62 @@ body {
 
 .theme-counter {
   position: relative;
-  padding: 10px;
-  font-size: 80px;
-  font-weight: 700;
-  color: #fff;
-  line-height: 1;
   background: linear-gradient(to top right, #282828 0%, #787878 100%);
   border: 5px double $info-bg;
   border-radius: 5px;
 
+  .flip-clock-container {
+    justify-content: space-between;
+
+    [class|="flip-item"] {
+      position: relative;
+      width: calc(50% - 7px);
+
+      &::before {
+        position: absolute;
+        left: 100%;
+      }
+
+      .flip-digit {
+        width: 50%;
+      }
+    }
+  }
+
   &_small {
-    font-size: 40px;
+    width: 160px;
+
+    .flip-clock-container {
+
+      [class|="flip-item"] {
+        width: calc(50% - 5px);
+
+        &::before {
+          font-size: 30px;
+          line-height: 55px;
+          margin: 0 -3px;
+        }
+
+        .flip-digit {
+          height: 60px;
+
+          > span {
+
+            &::before, &::after {
+              font-size: 50px;
+            }
+
+            &::before {
+              line-height: 60px;
+            }
+
+            &::after {
+              line-height: 0px;
+            }
+          }
+        }
+      }
+    }
   }
 }
 

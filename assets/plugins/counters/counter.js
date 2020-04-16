@@ -31,11 +31,4 @@ $( function() {
 		outputPattern: '$day Days $hour Hours $minute Minutes $second Seconds',
 		from: 60 * 60 * 24 * 3
 	});
-
-	// counter experience
-	$( '#experience-counter' ).countdown( {
-		from: 779,
-		to: 0,
-		outputPattern: '$minute : $second',
-	});
 });

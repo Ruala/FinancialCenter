@@ -281,6 +281,11 @@ body {
   .theme-counter_small {
     font-size: 40px; }
 
+.language-menu {
+  position: relative; }
+  .language-menu .dropdown-menu {
+    min-width: 100%; }
+
 .dark-mode .side-header {
   border-bottom-color: transparent; }
 

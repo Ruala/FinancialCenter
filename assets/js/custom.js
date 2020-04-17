@@ -312,6 +312,13 @@
 			}
 		}
 	})();
+
+	/*----disabled links----*/
+	(() => {
+		const $links = $('[data-disabled-link]');
+
+		$links.on('click', e => e.preventDefault());
+	})();
 	
 	// ______________ Styles ______________//
 	

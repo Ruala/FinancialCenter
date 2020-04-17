@@ -293,6 +293,9 @@ body {
   min-width: 1px;
   max-width: 100%; }
 
+[data-disabled-link] {
+  color: #aaaabf !important; }
+
 .side-header {
   padding: 11px 10px;
   border-bottom-color: transparent; }

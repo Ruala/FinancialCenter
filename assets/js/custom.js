@@ -173,107 +173,110 @@
 	});
 
 	/*----BarChartEchart----*/
-	var echartBar = echarts.init(document.getElementById('finance-chart'), {
-		color: ['#0774f8', '#d43f8d'],
-		categoryAxis: {
-			axisLine: {
-				lineStyle: {
-					color: '#77778e'
+	var financeChart = document.getElementById('finance-chart');
+	if (financeChart) {
+		var echartBar = echarts.init(financeChart, {
+			color: ['#0774f8', '#d43f8d'],
+			categoryAxis: {
+				axisLine: {
+					lineStyle: {
+						color: '#77778e'
+					}
+				},
+				splitLine: {
+					lineStyle: {
+						color: ['rgba(119, 119, 142, 0.2)']
+					}
 				}
 			},
-			splitLine: {
-				lineStyle: {
-					color: ['rgba(119, 119, 142, 0.2)']
-				}
-			}
-		},
-		grid: {
-			x: 40,
-			y: 20,
-			x2: 40,
-			y2: 20
-		},
-		valueAxis: {
-			axisLine: {
-				lineStyle: {
-					color: '#77778e'
+			grid: {
+				x: 40,
+				y: 20,
+				x2: 40,
+				y2: 20
+			},
+			valueAxis: {
+				axisLine: {
+					lineStyle: {
+						color: '#77778e'
+					}
+				},
+				splitArea: {
+					show: false,
+					areaStyle: {
+						color: ['rgba(255,255,255,0.1)']
+					}
+				},
+				splitLine: {
+					lineStyle: {
+						color: ['rgba(119, 119, 142, 0.2)']
+					}
 				}
 			},
-			splitArea: {
-				show: false,
-				areaStyle: {
-					color: ['rgba(255,255,255,0.1)']
+		});
+		echartBar.setOption({
+			tooltip: {
+				trigger: 'axis'
+			},
+			legend: {
+				data: ['Revenue', 'Expenses']
+			},
+			toolbox: {
+				show: false
+			},
+			calculable: false,
+			xAxis: [{
+				type: 'category',
+				data: ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+			}],
+			yAxis: [{
+				type: 'value'
+			}],
+			series: [{
+				name: '',
+				type: 'bar',
+				data: [30.0, 42.3, 60.2, 70.3, 60.8, 19.8, 27.8, 85.63, 52.63, 14.25, 63.25, 12.32],
+				markPoint: {
+					data: [{
+						type: 'max',
+						name: ''
+					}, {
+						type: 'min',
+						name: ''
+					}]
+				},
+				markLine: {
+					data: [{
+						type: 'average',
+						name: ''
+					}]
 				}
-			},
-			splitLine: {
-				lineStyle: {
-					color: ['rgba(119, 119, 142, 0.2)']
+			}, {
+				name: ' Expenses',
+				type: 'bar',
+				data: [16.6, 40.9, 50.0, 16.4, 28.7, 80.7, 178.6, 188.2, 48.7, 18.8, 6.0, 2.3],
+				markPoint: {
+					data: [{
+						name: 'Purchased Price',
+						value: 182.2,
+						xAxis: 7,
+						yAxis: 183,
+					}, {
+						name: 'Purchased Price',
+						value: 2.3,
+						xAxis: 11,
+						yAxis: 3
+					}]
+				},
+				markLine: {
+					data: [{
+						type: 'average',
+						name: ''
+					}]
 				}
-			}
-		},
-	});
-	echartBar.setOption({
-		tooltip: {
-			trigger: 'axis'
-		},
-		legend: {
-			data: ['Revenue', 'Expenses']
-		},
-		toolbox: {
-			show: false
-		},
-		calculable: false,
-		xAxis: [{
-			type: 'category',
-			data: ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-		}],
-		yAxis: [{
-			type: 'value'
-		}],
-		series: [{
-			name: '',
-			type: 'bar',
-			data: [30.0, 42.3, 60.2, 70.3, 60.8, 19.8, 27.8, 85.63, 52.63, 14.25, 63.25, 12.32],
-			markPoint: {
-				data: [{
-					type: 'max',
-					name: ''
-				}, {
-					type: 'min',
-					name: ''
-				}]
-			},
-			markLine: {
-				data: [{
-					type: 'average',
-					name: ''
-				}]
-			}
-		}, {
-			name: ' Expenses',
-			type: 'bar',
-			data: [16.6, 40.9, 50.0, 16.4, 28.7, 80.7, 178.6, 188.2, 48.7, 18.8, 6.0, 2.3],
-			markPoint: {
-				data: [{
-					name: 'Purchased Price',
-					value: 182.2,
-					xAxis: 7,
-					yAxis: 183,
-				}, {
-					name: 'Purchased Price',
-					value: 2.3,
-					xAxis: 11,
-					yAxis: 3
-				}]
-			},
-			markLine: {
-				data: [{
-					type: 'average',
-					name: ''
-				}]
-			}
-		}]
-	});
+			}]
+		});
+	}
 	
 	// ______________ Styles ______________//
 	

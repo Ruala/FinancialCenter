@@ -278,28 +278,39 @@
 		});
 	}
 
-	/*----quantity-input----*/
+	/*----set-amount----*/
 	(() => {
-		const $input = $('#quantity-input');
-		const $btnLess = $('#btn-less');
-		const $btnMore = $('#btn-more');
+		const $parent = $('.set-amount');
 
-		$input.on('change keyup input click', (e) => {;
+		if (!$parent.length) return;
 
+		$parent.each(function() {
+			const $input = $(this).find('.amount-input');
+			const $btnLess = $(this).find('.btn-less');
+			const $btnMore = $(this).find('.btn-more');
+
+			$input.on('change keyup input click', checkValue);
+
+			$btnLess.on('click', () => increment($input));
+
+			$btnMore.on('click', () => decrement($input));
+		});
+
+		function increment($el) {
+			let count = parseInt($el.val()) - 1;
+			count = count < 1 ? 0 : count;
+			$el.val(count);
+		}
+
+		function decrement($el) {
+			$el.val(parseInt($el.val()) + 1);
+		}
+
+		function checkValue(e) {
 			if (e.target.value.match(/[^0-9]/g)) {
 				e.target.value = e.target.value.replace(/[^0-9]/g, '');
 			}
-		});
-
-		$btnLess.on('click', () => {
-			let count = parseInt($input.val()) - 1;
-			count = count < 1 ? 0 : count;
-			$input.val(count);
-		});
-
-		$btnMore.on('click', () => {
-			$input.val(parseInt($input.val()) + 1);
-		});
+		}
 	})();
 	
 	// ______________ Styles ______________//

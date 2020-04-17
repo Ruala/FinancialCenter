@@ -9956,7 +9956,7 @@ a.card-tabs-item.active {
 		padding: 5px 0;
 		position:fixed;
 		width: 100%;
-		z-index: 9999;
+		z-index: 1040;
 		background:#fff;
 		border-bottom: 1px solid #eaedf1;
 		box-shadow: 0 8px 24px #f8f5fb;

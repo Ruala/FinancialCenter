@@ -12327,10 +12327,9 @@ a.tag-addon:hover {
 	position: fixed;
 	bottom: 20px;
 	right: 20px;
-	z-index: 99;
 	display: none;
 	text-align: center;
-	z-index: 10000;
+	z-index: 1040;
 	height: 50px;
 	width: 50px;
 	background-repeat: no-repeat;

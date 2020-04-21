@@ -297,6 +297,9 @@ body {
   color: #aaaabf !important;
   cursor: default; }
 
+.table-dark {
+  background-color: #22223d; }
+
 .side-header {
   padding: 11px 10px;
   border-bottom-color: transparent; }

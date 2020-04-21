@@ -16,6 +16,10 @@ body {
   cursor: default;
 }
 
+.table-dark {
+  background-color: $global-primary-color;
+}
+
 .side-header {
   padding: 11px 10px;
   border-bottom-color: transparent;

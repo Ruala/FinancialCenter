@@ -6,7 +6,8 @@ $to: 12;
 $rotate:(360/$to)+0deg;
 
 @for $i from $from through $to {
-  .roulette__item:nth-child(#{$i}) {
+  .roulette__item:nth-child(#{$i}),
+  .roulette__dots:nth-child(#{$i}) {
     transform:rotateZ($rotate * $i);
   }
 }
@@ -14,29 +15,65 @@ $rotate:(360/$to)+0deg;
 //lets - changing by media request
 
 $rouletteSize: 280px;
-$rouletteBorder: 5px;
+$rouletteBorder: 10px;
+$rouletteShadow: 5px;
+$rouletteInsetShadow: 3px;
 
-$itemWidth: (2 * 3.14 * $rouletteSize / 2) / $to;
+$itemWidth: 3 + (2 * 3.14 * $rouletteSize / 2) / $to;
 
 .roulette {
   display: block;
   position: relative;
   height: $rouletteSize;
   width: $rouletteSize;
-  margin: $rouletteBorder auto;
-  background-color: #4472c4;
+  margin: $rouletteShadow auto;
+  background-color: red; //#35b4ff;
   border-radius: 50%;
+  box-shadow: 0 0 0 $rouletteShadow #3573ff;
 
   &::before {
     content: '';
     position: absolute;
-    top: -($rouletteBorder - 1);
-    right: -($rouletteBorder - 1);
-    bottom: -($rouletteBorder - 1);
-    left: -($rouletteBorder - 1);
-    border: $rouletteBorder solid #4472c4;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    border: $rouletteBorder solid #35b4ff;
     border-radius: 50%;
-    box-shadow: 0 0 0 2px #fff;
+    box-shadow: inset 0 0 0 $rouletteInsetShadow #c6eaff;
+  }
+
+  &__decoration {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    border-radius: 50%;
+  }
+
+  &__dots {
+    width: $itemWidth;
+    height: $rouletteSize / 2;
+    display: inline-flex;
+    justify-content: space-around;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    left: calc(50% - (#{$itemWidth} / 2));
+    transform-origin: 50% 100%;
+    box-sizing: border-box;
+  }
+
+  &__dot {
+    width: $rouletteBorder - 4;
+    height: $rouletteBorder - 4;
+    margin-top: 4px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: pulse 1s linear infinite;
   }
 
   &__list {
@@ -60,14 +97,24 @@ $itemWidth: (2 * 3.14 * $rouletteSize / 2) / $to;
     transform-origin: 50% 100%;
     border-left: ($itemWidth / 2) solid transparent;
     border-right: ($itemWidth / 2) solid transparent;
-    border-top: ($rouletteSize / 2) solid #5d9eda;
+    border-top: ($rouletteSize / 2) solid #dcf2ff;
     box-sizing: border-box;
+
+    &:nth-child(even) {
+      border-top-color: #35b4ff;
+
+
+      .roulette__round {
+        width: 4px;
+        height: 4px;
+      }
+    }
   }
 
   &__data {
     position: absolute;
-    top: -($rouletteSize / 2);
-    left: -($itemWidth / 4); // half horizontal border, ($itemwidth / 2) / 2
+    top: -($rouletteSize / 2) + $rouletteBorder + $rouletteInsetShadow;
+    left: -($itemWidth / 4) + 1; // half horizontal border, ($itemwidth / 2) / 2
   }
 
   &__image {
@@ -77,8 +124,13 @@ $itemWidth: (2 * 3.14 * $rouletteSize / 2) / $to;
     height: auto;
   }
 
-  &__number {
-    font-size: 22px;
+  &__round {
+    width: 8px;
+    height: 8px;
+    margin: 30px auto 0;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 50%;
   }
 
   &__result {
@@ -88,14 +140,35 @@ $itemWidth: (2 * 3.14 * $rouletteSize / 2) / $to;
     position: absolute;
     top: 50%;
     left: 50%;
+    z-index: 3;
     transform: translate(-50%, -50%);
-    width: 80px;
-    height: 80px;
-    text-align: center;
-    font-size: 14px;
-    background: linear-gradient(to top, #4071c9 0%, #5d80ca 100%);
+
+    &_state_active {
+
+      .roulette__arrow {
+        /*animation: rotate 2s linear infinite;*/
+      }
+    }
+  }
+
+  &__arrow {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background-color: #35b4ff;
+    border: 10px solid #0069a8;
     border-radius: 50%;
-    box-shadow: 0 2px 0 1px #22394e;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: calc(100% + 5px);
+      transform: translateX(-50%);
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: ($rouletteSize / 2 - 50) solid #0069a8;
+    }
   }
 }
 
@@ -103,20 +176,30 @@ $itemWidth: (2 * 3.14 * $rouletteSize / 2) / $to;
 
   $rouletteSize: 400px;
   $rouletteBorder: 15px;
+  $rouletteShadow: 8px;
+  $rouletteInsetShadow: 5px;
 
-  $itemWidth: (2 * 3.14 * $rouletteSize / 2) / $to;
+  $itemWidth: 3 + (2 * 3.14 * $rouletteSize / 2) / $to;
 
   .roulette {
     height: $rouletteSize;
     width: $rouletteSize;
-    margin: $rouletteBorder auto;
+    margin: $rouletteShadow auto;
 
     &::before {
-      top: -($rouletteBorder - 1);
-      right: -($rouletteBorder - 1);
-      bottom: -($rouletteBorder - 1);
-      left: -($rouletteBorder - 1);
-      border: $rouletteBorder solid #4472c4;
+      border-width: $rouletteBorder;
+      box-shadow: inset 0 0 0 $rouletteInsetShadow #c6eaff;
+    }
+
+    &__dots {
+      width: $itemWidth;
+      height: $rouletteSize / 2;
+      left: calc(50% - (#{$itemWidth} / 2));
+    }
+
+    &__dot {
+      width: $rouletteBorder - 4;
+      height: $rouletteBorder - 4;
     }
 
     &__list {
@@ -128,28 +211,45 @@ $itemWidth: (2 * 3.14 * $rouletteSize / 2) / $to;
       width: $itemWidth;
       height: $rouletteSize / 2;
       left: calc(50% - (#{$itemWidth} / 2));
-      border-left: ($itemWidth / 2) solid transparent;
-      border-right: ($itemWidth / 2) solid transparent;
-      border-top: ($rouletteSize / 2) solid #5d9eda;
+      border-left-width: ($itemWidth / 2);
+      border-right-width: ($itemWidth / 2);
+      border-top-width: ($rouletteSize / 2);
+
+      &:nth-child(even) {
+
+        .roulette__round {
+          width: 8px;
+          height: 8px;
+        }
+      }
     }
 
     &__data {
-      top: -($rouletteSize / 2);
-      left: -($itemWidth / 4); // half horizontal border, ($itemwidth / 2) / 2
+      top: -($rouletteSize / 2) + $rouletteBorder + $rouletteInsetShadow;
+      left: -($itemWidth / 4) + 1; // half horizontal border, ($itemwidth / 2) / 2
     }
 
     &__image {
       width: 54px;
     }
 
-    &__number {
-      font-size: 26px;
+    &__round {
+      width: 12px;
+      height: 12px;
+      margin-top: 50px;
     }
 
-    &__result {
-      width: 100px;
-      height: 100px;
-      font-size: 18px;
+    &__arrow {
+      width: 80px;
+      height: 80px;
+      border-width: 15px;
+
+      &::before {
+        bottom: calc(100% + 7px);
+        border-left-width: 7px;
+        border-right-width: 7px;
+        border-bottom-width: ($rouletteSize / 2 - 90);
+      }
     }
   }
 }
@@ -157,9 +257,11 @@ $itemWidth: (2 * 3.14 * $rouletteSize / 2) / $to;
 @media (min-width: 992px) {
 
   $rouletteSize: 500px;
-  $rouletteBorder: 15px;
+  $rouletteBorder: 25px;
+  $rouletteShadow: 10px;
+  $rouletteInsetShadow: 5px;
 
-  $itemWidth: (2 * 3.14 * $rouletteSize / 2) / $to;
+  $itemWidth: 3 + (2 * 3.14 * $rouletteSize / 2) / $to;
 
   .roulette {
     height: $rouletteSize;
@@ -167,11 +269,19 @@ $itemWidth: (2 * 3.14 * $rouletteSize / 2) / $to;
     margin: $rouletteBorder auto;
 
     &::before {
-      top: -($rouletteBorder - 1);
-      right: -($rouletteBorder - 1);
-      bottom: -($rouletteBorder - 1);
-      left: -($rouletteBorder - 1);
-      border: $rouletteBorder solid #4472c4;
+      border-width: $rouletteBorder;
+      box-shadow: inset 0 0 0 $rouletteInsetShadow #c6eaff;
+    }
+
+    &__dots {
+      width: $itemWidth;
+      height: $rouletteSize / 2;
+      left: calc(50% - (#{$itemWidth} / 2));
+    }
+
+    &__dot {
+      width: $rouletteBorder - 4;
+      height: $rouletteBorder - 4;
     }
 
     &__list {
@@ -183,18 +293,47 @@ $itemWidth: (2 * 3.14 * $rouletteSize / 2) / $to;
       width: $itemWidth;
       height: $rouletteSize / 2;
       left: calc(50% - (#{$itemWidth} / 2));
-      border-left: ($itemWidth / 2) solid transparent;
-      border-right: ($itemWidth / 2) solid transparent;
-      border-top: ($rouletteSize / 2) solid #5d9eda;
+      border-left-width: ($itemWidth / 2);
+      border-right-width: ($itemWidth / 2);
+      border-top-width: ($rouletteSize / 2);
     }
 
     &__data {
-      top: -($rouletteSize / 2);
-      left: -($itemWidth / 4); // half horizontal border, ($itemwidth / 2) / 2
+      top: -($rouletteSize / 2) + $rouletteBorder + $rouletteInsetShadow;
+      left: -($itemWidth / 4) + 1; // half horizontal border, ($itemwidth / 2) / 2
     }
 
     &__image {
       width: 64px;
     }
+
+    &__round {
+      margin-top: 70px;
+    }
+
+    &__arrow {
+      width: 100px;
+      height: 100px;
+      border-width: 20px;
+
+      &::before {
+        bottom: calc(100% + 10px);
+        border-left-width: 10px;
+        border-right-width: 10px;
+        border-bottom-width: ($rouletteSize / 2 - 120);
+      }
+    }
+  }
+}
+
+@keyframes pulse {
+  50% {
+    box-shadow: 0 0 3px 2px #fff;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
   }
 }

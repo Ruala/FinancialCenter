@@ -250,6 +250,22 @@ body {
   }
 }
 
+.card.bg-warning {
+  color: #000;
+}
+
+.purchase {
+
+  .btn.disabled, .btn:disabled {
+    color: #fff;
+    background: #6c757d !important;
+    border-color: #6c757d;
+    box-shadow: 0 5px 10px rgba(108, 117, 125, 0.3);
+    opacity: 1;
+    cursor: default;
+  }
+}
+
 @media (min-width: 576px) {
 
   .team-structure {
@@ -322,5 +338,12 @@ body {
       left: 100%;
       bottom: 0;
     }
+  }
+}
+
+@media (min-width: 1280px) {
+
+  .roulette-wrapper {
+    padding-top: 40px;
   }
 }

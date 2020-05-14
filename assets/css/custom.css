@@ -300,6 +300,9 @@ body {
 .table-dark {
   background-color: #22223d; }
 
+.mobile-header .header-brand {
+  line-height: 1; }
+
 .side-header {
   padding: 11px 10px;
   border-bottom-color: transparent; }
@@ -337,14 +340,7 @@ body {
 
 .page-header {
   position: relative;
-  justify-content: center;
-  padding-left: 80px;
-  padding-right: 80px; }
-  .page-header .language-menu {
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%); }
+  justify-content: center; }
 
 .page-title {
   margin-bottom: 0;
@@ -459,7 +455,20 @@ body {
   .team-structure__list {
     min-width: 100px;
     max-width: 100%; } }
+@media (min-width: 768px) {
+  .page-header {
+    justify-content: space-between; } }
 @media (min-width: 992px) {
+  .page-header {
+    justify-content: center;
+    padding-left: 220px;
+    padding-right: 220px; }
+    .page-header__controls {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%); }
+
   .start-message {
     padding-top: 160px; }
     .start-message__card {
@@ -479,8 +488,5 @@ body {
     top: 0;
     left: 100%;
     bottom: 0; } }
-@media (max-width: 991px) {
-  .page-header .language-menu {
-    right: 15px; } }
 
 /*# sourceMappingURL=custom.css.map */

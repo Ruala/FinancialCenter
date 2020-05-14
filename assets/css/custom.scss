@@ -20,6 +20,10 @@ body {
   background-color: $global-primary-color;
 }
 
+.mobile-header .header-brand {
+  line-height: 1;
+}
+
 .side-header {
   padding: 11px 10px;
   border-bottom-color: transparent;
@@ -70,15 +74,6 @@ body {
 .page-header {
   position: relative;
   justify-content: center;
-  padding-left: 80px;
-  padding-right: 80px;
-
-  .language-menu {
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-  }
 }
 
 .page-title {
@@ -271,7 +266,27 @@ body {
   }
 }
 
+@media (min-width: 768px) {
+
+  .page-header {
+    justify-content: space-between;
+  }
+}
+
 @media (min-width: 992px) {
+
+  .page-header {
+    justify-content: center;
+    padding-left: 220px;
+    padding-right: 220px;
+
+    &__controls {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+    }
+  }
 
   .start-message {
     padding-top: 160px;
@@ -306,16 +321,6 @@ body {
       top: 0;
       left: 100%;
       bottom: 0;
-    }
-  }
-}
-
-@media (max-width: 991px) {
-
-  .page-header {
-
-    .language-menu {
-      right: 15px;
     }
   }
 }
